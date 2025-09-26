@@ -15,10 +15,11 @@ unsigned int getTwoDigitKeypad(void) {
     uc_8 digits[2];          // Internal storage for digits
     uc_8 digit_count = 0;    // Counter for digits
     unsigned int number = 0; // Final 2-digit number
-
-
+    lcdPut("eenter one num", 1);
     while (digit_count < 2) {
+          
         if (keypadGet(&key)) {
+          lcdPut("got", 1);
             // Ignore keys 10-15 (A-F)
             if (key > 9) continue;
 
@@ -80,10 +81,11 @@ void main(void) {
     lcdInit();         
     keypadInit();      
     timerInit();
-    lcdPut("Please enter two digit", 1);
 
     for (;;) {
         keypad_number = getTwoDigitKeypad();
+
+   break; 
         // Now 'keypad_number' contains the 2-digit number entered via keypad
         // You can use it here for LEDs, calculations, etc.
 
@@ -96,4 +98,5 @@ void main(void) {
         BusAddress = SegHigh;
         BusWrite();*/
     }
+    while (1) { } 
 }
