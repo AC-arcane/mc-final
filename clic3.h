@@ -65,6 +65,15 @@ void BusWrite(void);
     struct   uhighlow ubytes ;   /* Small endian bytes        */
     struct   shighlow sbytes ;
     };
+    
+
+
+#define MaxKeys (16)
+extern const uc_8 LookupKeys[MaxKeys];
+
+#define MaxSegs (0x1C)
+#define Blank7Seg (0x1B)
+extern const uc_8 LookupSeg[MaxSegs];
     extern ui_16 BusAddress;
     extern ui_16 BusData;
 // ****************************************************************************
