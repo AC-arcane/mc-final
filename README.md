@@ -1,2 +1,1 @@
-todo. currently stuck in ISR,   need debounce
-todo add buzzer to keypad
+0x80; is S3
